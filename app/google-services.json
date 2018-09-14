@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1016875098642",
+    "firebase_url": "https://edwardbill-acd26.firebaseio.com",
+    "project_id": "edwardbill-acd26",
+    "storage_bucket": "edwardbill-acd26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016875098642:android:c4f515f057119177",
+        "android_client_info": {
+          "package_name": "edwardbil_soundboard.gkain.edwardbil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016875098642-gpmru0svl3qjp3v4aavv8si3kf3oa6sv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc1uv0NT7kn4yHbbqK6_qmH-pgWfuMerc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
