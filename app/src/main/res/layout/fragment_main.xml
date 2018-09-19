@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="#f4f4f4"
     >
 
 
@@ -17,26 +17,47 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/header">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="EDWARD BILL"
+            android:text=" EDWARD BIL \n SOUNDBOARD"
             android:textSize="30sp"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="soundboard"
-            android:textSize="30sp"
-            android:gravity="center"/>
+            android:gravity="left"
+            android:textColor="#FFFF"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <ImageView
+        android:id="@+id/shareview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/share" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:id="@+id/playstop"-->
+        <!--android:background="@drawable/share2"/>-->
+
+</LinearLayout>
+
     </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/linear1"
@@ -111,7 +132,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Чи да?"
+            android:text="Давай дружить"
             android:textColor="#000000" />
 
         <TextView
@@ -121,7 +142,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#000000"
-            android:text="Чи или не чи?" />
+            android:text="Провокация" />
 
         <TextView
             android:layout_width="50dp"
@@ -130,7 +151,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#000000"
-            android:text="Эй" />
+            android:text="Девушки привет" />
 
         <TextView
             android:layout_width="50dp"
@@ -139,7 +160,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#000000"
-            android:text="Привет" />
+            android:text="Друг называется" />
 
 
     </LinearLayout>
@@ -213,7 +234,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="1111♪"
+            android:text="***** а не друг"
             android:textColor="#000000" />
 
         <TextView
@@ -222,7 +243,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="22222♪"
+            android:text="Зомби"
             android:textColor="#000000"/>
 
         <TextView
@@ -231,7 +252,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="33333♪"
+            android:text="Мерзко это говорить"
             android:textColor="#000000"/>
 
         <TextView
@@ -240,7 +261,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="44444♫"
+            android:text="О муравьях"
             android:textColor="#000000"/>
 
 
@@ -315,7 +336,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="1111♪"
+            android:text="Развод"
             android:textColor="#000000" />
 
         <TextView
@@ -324,7 +345,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="22222♪"
+            android:text="Снимай"
             android:textColor="#000000" />
 
         <TextView
@@ -333,7 +354,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="33333♪"
+            android:text="Ты шо болеешь?"
             android:textColor="#000000" />
 
         <TextView
@@ -342,10 +363,613 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="44444♫"
+            android:text="Уйди *****"
             android:textColor="#000000" />
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt3"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear4"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Это шутка"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Я не прощаю таких"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Я робот эдуард"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Гав"
+            android:textColor="#000000" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt4"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button18"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button20"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear5"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Спрятался"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Вот ******"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Время не подскажите?"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Если что"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear6"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt5"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button21"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button22"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button23"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button24"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear6"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="За 100 рублей"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Извините пожалуйста"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Инстаграм"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Перепутал вас"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear7"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt6"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button26"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button27"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button28"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear7"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Серьёзно говорю"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Смех ★"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Смех ★★"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Там такого нет"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear8"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt7"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button29"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button30"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button31"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button32"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear8"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Ты видел?"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Чи да? ★"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Чи да? ★★"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Чи да? ★★★"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear9"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt8"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/button33"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button34"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button35"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/button36"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/krug"
+            android:text="♬"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/txt9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/linear9"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Это ты мне сказал?"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Вот это тёлка!"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Финалка будет вечером"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Гуси в кукурузе"
+            android:textColor="#000000" />
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
