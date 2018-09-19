@@ -2,6 +2,7 @@ package edwardbil_soundboard.gkain.edwardbil;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,6 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 
 /**
@@ -38,6 +44,11 @@ Button button15;
 Button button16 ,button17,button18,button19,button20,button21,button22,button23,button24,button25,
     button26,button27,button28,button29,button30,button31,button32,button33,button34,button35,button36;
 ImageView shareview;
+TextView header;
+
+int colorInt=0;
+
+private InterstitialAd mInterstitialAd;
 
     public MainFragment() {
         // Required empty public constructor
@@ -50,6 +61,14 @@ ImageView shareview;
 
         View view = inflater.inflate(R.layout.fragment_main,
                 container, false);
+
+        MobileAds.initialize(getActivity(),
+                "ca-app-pub-1336421761813784~9789190223");
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+        mInterstitialAd.setAdUnitId("ca-app-pub-1336421761813784/9029646474");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
 
         button1 = view.findViewById(R.id.button1);
         button2 = view.findViewById(R.id.button2);
@@ -91,6 +110,7 @@ ImageView shareview;
         button36 = view.findViewById(R.id.button36);
 
         shareview = view.findViewById(R.id.shareview);
+        header = view.findViewById(R.id.header);
 
         // Inflate the layout for this fragment
 
@@ -133,8 +153,47 @@ ImageView shareview;
 
         shareview.setOnClickListener(this);
 
+        header.setOnClickListener(this);
+
 
         return view;
+    }
+
+    public void secretView(int color){
+
+        if (color==0) {
+            header.setTextColor(Color.parseColor("#F6E4E6"));
+        }
+
+        if (color==1) {
+            header.setTextColor(Color.parseColor("#EECDD0"));
+
+        }
+
+        if (color==2) {
+            header.setTextColor(Color.parseColor("#DD979D"));
+
+        }
+        if (color==3) {
+            header.setTextColor(Color.parseColor("#CD6069"));
+
+        }
+        if (color==4) {
+            header.setTextColor(Color.parseColor("#CD323F"));
+
+        }
+        if (color==5) {
+
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            }
+            MainActivity.fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, new SecretFragment())
+                    .addToBackStack(null)
+                    .commit();
+
+            colorInt=0;
+        }
     }
 
     @Override
@@ -150,6 +209,11 @@ ImageView shareview;
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent,"Поделиться"));
 
+                break;
+
+            case R.id.header:
+                secretView(colorInt);
+                colorInt++;
                 break;
 
 
