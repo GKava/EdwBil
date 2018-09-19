@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <shape android:shape="oval">
+        <shape android:shape="oval" >
 
             <gradient
                 android:angle="90"
-                android:endColor="#d34261"
-                android:startColor="#823d95"
+                android:endColor="#E6E6E6"
+                android:startColor="#E6E6E6"
                 android:type="linear" />
 
             <stroke
@@ -17,12 +17,13 @@
             <!--<solid android:color="#B7B7FB" />-->
 
             <corners
+
+
                 android:bottomLeftRadius="12.0dip"
                 android:bottomRightRadius="12.0dip"
                 android:radius="12.0dip"
                 android:topLeftRadius="12.0dip"
-                android:topRightRadius="12.0dip"
-                />
+                android:topRightRadius="12.0dip" />
         </shape>
     </item>
 </selector>
