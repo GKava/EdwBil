@@ -42,11 +42,13 @@ Button button13;
 Button button14;
 Button button15;
 Button button16 ,button17,button18,button19,button20,button21,button22,button23,button24,button25,
-    button26,button27,button28,button29,button30,button31,button32,button33,button34,button35,button36;
+    button26,button27,button28,button29,button30,button31,button32,button33,button34,button35,button36,button37,button38,button39,button40,
+        button41,button42,button43,button44,button45,button46,button47,button48;
 ImageView shareview;
 TextView header;
 
 int colorInt=0;
+int adsInt=0;
 
 private InterstitialAd mInterstitialAd;
 
@@ -108,6 +110,21 @@ private InterstitialAd mInterstitialAd;
         button34 = view.findViewById(R.id.button34);
         button35 = view.findViewById(R.id.button35);
         button36 = view.findViewById(R.id.button36);
+        button37 = view.findViewById(R.id.button37);
+        button38 = view.findViewById(R.id.button38);
+        button39 = view.findViewById(R.id.button39);
+        button40 = view.findViewById(R.id.button40);
+
+
+        button41 = view.findViewById(R.id.button41);
+        button42 = view.findViewById(R.id.button42);
+        button43 = view.findViewById(R.id.button43);
+        button44 = view.findViewById(R.id.button44);
+        button45 = view.findViewById(R.id.button45);
+        button46 = view.findViewById(R.id.button46);
+        button47 = view.findViewById(R.id.button47);
+        button48 = view.findViewById(R.id.button48);
+
 
         shareview = view.findViewById(R.id.shareview);
         header = view.findViewById(R.id.header);
@@ -150,11 +167,27 @@ private InterstitialAd mInterstitialAd;
         button34.setOnClickListener(this);
         button35.setOnClickListener(this);
         button36.setOnClickListener(this);
+        button37.setOnClickListener(this);
+        button38.setOnClickListener(this);
+        button39.setOnClickListener(this);
+        button40.setOnClickListener(this);
+
+        button41.setOnClickListener(this);
+        button42.setOnClickListener(this);
+        button43.setOnClickListener(this);
+        button44.setOnClickListener(this);
+        button45.setOnClickListener(this);
+        button46.setOnClickListener(this);
+        button47.setOnClickListener(this);
+        button48.setOnClickListener(this);
+
+
+
+
+
 
         shareview.setOnClickListener(this);
-
         header.setOnClickListener(this);
-
 
         return view;
     }
@@ -183,10 +216,12 @@ private InterstitialAd mInterstitialAd;
 
         }
         if (color==5) {
+if(adsInt==0) {
+    if (mInterstitialAd.isLoaded()) {
+        mInterstitialAd.show();
+    } adsInt=1;
+}
 
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
-            }
             MainActivity.fragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, new SecretFragment())
                     .addToBackStack(null)
@@ -361,6 +396,66 @@ private InterstitialAd mInterstitialAd;
                 mediaPlayer = MediaPlayer.create(getActivity(), R.raw.gusi);
                 mediaPlayer.start();
                 break;
+
+
+
+            case R.id.button37:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.esatsss);
+                mediaPlayer.start();
+                break;
+            case R.id.button38:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.ktone);
+                mediaPlayer.start();
+                break;
+            case R.id.button39:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.ktoeto);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button40:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.neznaesh);
+                mediaPlayer.start();
+                break;
+
+
+            case R.id.button41:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.tineti);
+                mediaPlayer.start();
+                break;
+            case R.id.button42:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.neti);
+                mediaPlayer.start();
+                break;
+            case R.id.button43:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.razvodish);
+                mediaPlayer.start();
+                break;
+            case R.id.button44:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.zubispira);
+                mediaPlayer.start();
+                break;
+
+
+            case R.id.button45:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.vigei);
+                mediaPlayer.start();
+                break;
+            case R.id.button46:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.nax);
+                mediaPlayer.start();
+                break;
+            case R.id.button47:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.tify);
+                mediaPlayer.start();
+                break;
+            case R.id.button48:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.haha);
+                mediaPlayer.start();
+                break;
+
+
+
+
         }
 
     }
