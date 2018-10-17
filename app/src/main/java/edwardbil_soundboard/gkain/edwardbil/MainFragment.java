@@ -1,10 +1,15 @@
 package edwardbil_soundboard.gkain.edwardbil;
 
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -43,19 +49,41 @@ Button button14;
 Button button15;
 Button button16 ,button17,button18,button19,button20,button21,button22,button23,button24,button25,
     button26,button27,button28,button29,button30,button31,button32,button33,button34,button35,button36,button37,button38,button39,button40,
-        button41,button42,button43,button44,button45,button46,button47,button48;
-ImageView shareview;
+        button41,button42,button43,button44,button45,button46,button47,button48,button49,button50,button51,button52,button53,button54,button55,button56,
+        button57,button58,button59,button60;
+
+
+ImageView shareview, helpview;
 TextView header;
 
 int colorInt=0;
 int adsInt=0;
-
+private SharedPreferences mSettings;
 private InterstitialAd mInterstitialAd;
 
-    public MainFragment() {
+public static final String APP_PREFERENCES_CHECKPOINT = "checkpoint";
+public static final String APP_PREFERENCES = "mysettings";
+
+public MainFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putInt(APP_PREFERENCES_CHECKPOINT, adsInt);
+        editor.apply();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (mSettings.contains(APP_PREFERENCES_CHECKPOINT)) {
+            adsInt = mSettings.getInt(APP_PREFERENCES_CHECKPOINT, 0);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,6 +91,8 @@ private InterstitialAd mInterstitialAd;
 
         View view = inflater.inflate(R.layout.fragment_main,
                 container, false);
+        adsInt=0;
+        mSettings = this.getActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
 
         MobileAds.initialize(getActivity(),
                 "ca-app-pub-1336421761813784~9789190223");
@@ -125,8 +155,22 @@ private InterstitialAd mInterstitialAd;
         button47 = view.findViewById(R.id.button47);
         button48 = view.findViewById(R.id.button48);
 
+        button49 = view.findViewById(R.id.button49);
+        button50 = view.findViewById(R.id.button50);
+        button51 = view.findViewById(R.id.button51);
+        button52 = view.findViewById(R.id.button52);
+        button53 = view.findViewById(R.id.button53);
+        button54 = view.findViewById(R.id.button54);
+        button55 = view.findViewById(R.id.button55);
+        button56 = view.findViewById(R.id.button56);
+        button57 = view.findViewById(R.id.button57);
+        button58 = view.findViewById(R.id.button58);
+        button59 = view.findViewById(R.id.button59);
+        button60 = view.findViewById(R.id.button60);
+
 
         shareview = view.findViewById(R.id.shareview);
+        helpview = view.findViewById(R.id.helpview);
         header = view.findViewById(R.id.header);
 
         // Inflate the layout for this fragment
@@ -181,12 +225,21 @@ private InterstitialAd mInterstitialAd;
         button47.setOnClickListener(this);
         button48.setOnClickListener(this);
 
-
-
-
-
+        button49.setOnClickListener(this);
+        button50.setOnClickListener(this);
+        button51.setOnClickListener(this);
+        button52.setOnClickListener(this);
+        button53.setOnClickListener(this);
+        button54.setOnClickListener(this);
+        button55.setOnClickListener(this);
+        button56.setOnClickListener(this);
+        button57.setOnClickListener(this);
+        button58.setOnClickListener(this);
+        button59.setOnClickListener(this);
+        button60.setOnClickListener(this);
 
         shareview.setOnClickListener(this);
+        helpview.setOnClickListener(this);
         header.setOnClickListener(this);
 
         return view;
@@ -197,23 +250,17 @@ private InterstitialAd mInterstitialAd;
         if (color==0) {
             header.setTextColor(Color.parseColor("#F6E4E6"));
         }
-
         if (color==1) {
             header.setTextColor(Color.parseColor("#EECDD0"));
-
         }
-
         if (color==2) {
             header.setTextColor(Color.parseColor("#DD979D"));
-
         }
         if (color==3) {
             header.setTextColor(Color.parseColor("#CD6069"));
-
         }
         if (color==4) {
             header.setTextColor(Color.parseColor("#CD323F"));
-
         }
         if (color==5) {
 if(adsInt==0) {
@@ -231,19 +278,48 @@ if(adsInt==0) {
         }
     }
 
+    private void createHelpDialog(String title, String content) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(title);
+        builder.setMessage(content);
+        builder.setNegativeButton("ЗАКРЫТЬ",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+
+                    }
+                });
+        builder.setPositiveButton("Открыть игру в Google Play",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Uri address = Uri.parse("https://play.google.com/store/apps/details?id=com.edwardbil_prank.tidatopstyle");
+                        Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
+                        startActivity(openlinkIntent);
+
+                    }
+                });
+        builder.show();
+    }
+
+
     @Override
     public void onClick(View view) {
-
         releaseMP();
-
         switch (view.getId()){
+
+            case R.id.helpview:
+                createHelpDialog("Помощь", "В приложении есть пасхалка, если вы сможете ее найти, то попадёте в секретный раздел ;) \n\nА еще у нас есть игра для фанатов Эдварда, со своей системой прокачки и валютой ChiDaCoins, если вам интересно можете перейти и посмотреть нажав на кнопку ниже.  ");
+
+                break;
+
+
             case R.id.shareview:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Приложение Edward Bil Soundboard, скачать можно здесь - https://play.google.com/store/apps/details?id=edwardbil_soundboard.gkain.edwardbil");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Приложение Edward Bil Soundboard, скачать - https://play.google.com/store/apps/details?id=edwardbil_soundboard.gkain.edwardbil");
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent,"Поделиться"));
-
                 break;
 
             case R.id.header:
@@ -450,6 +526,72 @@ if(adsInt==0) {
                 break;
             case R.id.button48:
                 mediaPlayer = MediaPlayer.create(getActivity(), R.raw.haha);
+                mediaPlayer.start();
+                break;
+
+
+
+            case R.id.button49:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.balabol);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button50:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.patcan);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button51:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.barni);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button52:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.dosled);
+                mediaPlayer.start();
+                break;
+
+
+
+            case R.id.button53:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.vidirashibi);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button54:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.mojeshpi);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button55:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.vertyxaletit);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button56:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.vignat);
+                mediaPlayer.start();
+                break;
+
+
+
+            case R.id.button57:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.obernis);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button58:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.nyrealno);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button59:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.prostnotak);
+                mediaPlayer.start();
+                break;
+
+            case R.id.button60:
+                mediaPlayer = MediaPlayer.create(getActivity(), R.raw.smexgieny);
                 mediaPlayer.start();
                 break;
 
